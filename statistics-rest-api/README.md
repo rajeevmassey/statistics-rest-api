@@ -63,3 +63,4 @@ Error codes:
     1002 - Missing timestamp field
     1003 - Missing amount field
     9999 - Internal API Error
+    204 - Transaction is older than 60 seconds
