@@ -19,7 +19,10 @@ where:
  - amount: double specifying the amount 
  - time: long specifying unix epoch time
 
-Response: empty body with HTTP status 201
+Response: 
+
+201 - in case of success
+204 - if transaction is older than 60 seconds
 
 #### GET /statistics
 
