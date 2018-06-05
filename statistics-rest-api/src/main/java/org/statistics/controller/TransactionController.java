@@ -22,5 +22,6 @@ public class TransactionController {
     @ResponseStatus(HttpStatus.CREATED)
     public void addTransaction(@RequestBody Transaction transaction){
         transactionService.addTransaction(transaction);
+        
     }
 }
