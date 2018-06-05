@@ -31,8 +31,7 @@ public class TransactionServiceImpl implements TransactionService {
 			throw new ValidationException(APIError.VALIDATION_MISSING_TIMESTAMP);
 		if (transaction.getAmount() == null)
 			throw new ValidationException(APIError.VALIDATION_MISSING_AMOUNT);
-		Instant instant = Instant.now();
-		if (instant.toEpochMilli() - transaction.getTimestamp() > 60)
+		if (Instant.now().toEpochMilli() - transaction.getTimestamp() > 60)
 			throw new ValidationException(APIError.VALIDATION_EXPIRED_TIMESTAMP);
 
 		logger.info("Received new transaction => {}", transaction);
